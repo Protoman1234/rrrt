@@ -17,6 +17,12 @@ function proxy(req, res) {
                 'x-forwarded-for': req.headers['x-forwarded-for'] || req.ip,
                 via: '1.1 bandwidth-hero'
             },
+            timeout: 10000,
+      maxRedirects: 5,
+      encoding: null,
+      strictSSL: false,
+      gzip: true,
+      jar: true
         })
         .then(origin => {
             if (!origin.ok) {
