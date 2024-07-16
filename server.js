@@ -4,8 +4,14 @@ const app = require('express')();
 const authenticate = require('./src/authenticate');
 const params = require('./src/params');
 const proxy = require('./src/proxy');
+const compression = require('compression');
 
 const PORT = process.env.PORT || 8080;
+
+app.use(compression({
+ level: 9,
+threshold: 0
+}))
 
 app.disable('trust proxy');
 app.get('/', authenticate, params, proxy);
