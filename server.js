@@ -8,7 +8,7 @@ const compression = require('compression');
 
 app.use(compression())
 
-app.enable('trust proxy');
+//app.enable('trust proxy');
 app.get('/', authenticate, params, proxy);
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 app.listen(8080);
