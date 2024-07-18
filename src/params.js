@@ -4,7 +4,7 @@ function params(req, res, next) {
   const { url, jpeg, bw, l } = req.query;
 
   if (!url) {
-    return res.end('success');
+    return res.end('bandwidth-hero-proxy');
   }
 
   const urls = Array.isArray(url) ? url.join('&url=') : url;
