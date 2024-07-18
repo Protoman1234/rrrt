@@ -4,7 +4,7 @@ function params(req, res, next) {
   const { url, jpeg, bw, l } = req.query;
 
   if (!url) {
-    return res.end();
+    return res.end('y');
   }
 
   const urls = Array.isArray(url) ? url.join('&url=') : url;
