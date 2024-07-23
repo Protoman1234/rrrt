@@ -10,4 +10,4 @@ const hostname = "0.0.0.0";
 
 app.get('/', authenticate, params, proxy);
 app.get('/favicon.ico', (req, res) => res.status(204).end());
-app.listen(PORT, hostname, () => console.log(`Listening on ${hostname}:${PORT}/`));
+app.listen(PORT, hostname, () => console.log(`Listening on ${hostname}:${PORT}`));
