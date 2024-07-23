@@ -6,7 +6,11 @@ const params = require('./src/params');
 const proxy = require('./src/proxy');
 const PORT = process.env.PORT || 8080;
 const hostname = "0.0.0.0";
+const enforce = require('express-sslify');
 
+app.use(enforce.HTTPS({
+  trustProtoHeader: true
+}));
 
 
 app.get('/', authenticate, params, proxy);
