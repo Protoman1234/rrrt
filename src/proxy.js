@@ -12,17 +12,16 @@ function proxy(req, res) {
         req.params.url,
         {
             headers: {
-                ...pick(req.headers, ['cookie', 'dnt', 'referer']),
-                'user-agent': 'Bandwidth-Hero Compressor',
-                'x-forwarded-for': req.headers['x-forwarded-for'] || req.ip,
-                via: '1.1 bandwidth-hero'
+                ...pick(req.headers, ['dnt', 'referer']),
+                'user-agent': 'Mozilla/5.0 (X11; Fedora; Linux x86_64; en-AU; rv:126.0) Gecko/20220911 Firefox/126.0',
+                'x-forwarded-for': req.headers['x-forwarded-for']
             },
             timeout: 10000,
       maxRedirects: 5,
       encoding: null,
       strictSSL: false,
       gzip: true,
-      jar: true
+      jar: false
         })
         .then(origin => {
             if (!origin.ok) {
