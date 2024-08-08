@@ -11,8 +11,8 @@ function compress(req, res, input) {
      sharp(input)
     .grayscale(req.params.grayscale)
     .toFormat(format, {
-      quality: req.params.quality,
-      effort: 1
+      quality: req.params.quality
+      
       
     })
     .toBuffer((err, output, info) => {
