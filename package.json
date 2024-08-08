@@ -1,9 +1,9 @@
 {
-  "name": "y",
+  "name": "fantastic",
   "main": "server.js",
   "private": true,
   "version": "1.0.1",
-  "description": "Data compression service that converts images to low-res WebP or JPEG on the fly. Used in Bandwidth-Hero browser extension.",
+  "description": "Optimise images on the fly",
   "author": "Anatoliy Yastreb",
   "license": "MIT",
   "scripts": {
